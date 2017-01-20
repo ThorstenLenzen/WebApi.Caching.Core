@@ -1,0 +1,18 @@
+{
+  "title": "Toto.WebApi.Caching.Core.Core",
+  "copyright": "Toto",
+  "description": "A cache implementation for WebApi Core",
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Contracts": "1.0.0-*",
+    "NETStandard.Library": "1.6.0",
+    "Microsoft.Framework.Caching.Memory": "1.0.0-beta8"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
