@@ -63,7 +63,7 @@ namespace Toto.WebApi.Caching.Core.Core
         /// </summary>
         /// <param name="sessionId">The session identifier.</param>
         /// <returns>A <see cref="ISession"/>An instance for the specified id.</returns>
-        public ISession GetOrCreateSession(string sessionId)
+        public ISession Session(string sessionId)
         {
             ISession session;
 

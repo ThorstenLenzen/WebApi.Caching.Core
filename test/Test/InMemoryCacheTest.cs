@@ -87,7 +87,7 @@ namespace Toto.WebApi.Caching.Test
             ICache cache = new InMemoryCache();
 
             // Act
-            ISession session = cache.GetOrCreateSession(TestValue);
+            ISession session = cache.Session(TestValue);
 
             // Assert
             Assert.NotNull(session);
@@ -101,10 +101,10 @@ namespace Toto.WebApi.Caching.Test
         {
             // Arrange
             ICache cache = new InMemoryCache();
-            cache.GetOrCreateSession(TestValue);
+            cache.Session(TestValue);
 
             // Act
-            ISession session = cache.GetOrCreateSession(TestValue);
+            ISession session = cache.Session(TestValue);
 
             // Assert
             Assert.NotNull(session);
@@ -144,12 +144,12 @@ namespace Toto.WebApi.Caching.Test
             {
                 SessionCacheExpirationOffset = TimeSpan.FromMilliseconds(2)
             };
-            var session = cache.GetOrCreateSession(TestValue);
+            var session = cache.Session(TestValue);
             session.Add(TestValue, TestValue);
 
             // Act
             Thread.Sleep(5);
-            session = cache.GetOrCreateSession(TestValue);
+            session = cache.Session(TestValue);
             var exception = Record.Exception(() => session.Get<string>(TestValue));
 
             // Assert

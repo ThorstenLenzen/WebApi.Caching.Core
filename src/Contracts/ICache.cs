@@ -10,7 +10,7 @@
         /// </summary>
         /// <param name="sessionId">The session identifier.</param>
         /// <returns>A <see cref="ISession"/>An instance for the specified id.</returns>
-        ISession GetOrCreateSession(string sessionId);
+        ISession Session(string sessionId);
 
         /// <summary>
         /// Adds an item with the specified name to the cache.
